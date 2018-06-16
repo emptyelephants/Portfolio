@@ -8,7 +8,7 @@ p{
   line-height: 110%;
 }
 h1{
-  font-size: 45px;
+  font-size: 44px;
   font-weight: 600;
   margin: 28px 0px;
   text-align: center;
@@ -22,11 +22,18 @@ a{
   color: inherit;
 }
 a:hover{
-  color:#CDB46A;
+  color:#A43937;
 }
 img{
-  max-width: 100%;
+  max-width: 100%; */
   max-height: 100%;
+  position: relative;
+  width: 340px;
+  height: 247px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: center;
+  margin:5% 0;
 }
 i{
   font-size: 4.3em;
@@ -44,57 +51,66 @@ i{
   display: block;
   width: 150px;
 }
+.logo-container{
+  /* margin:0 auto; */
+  /* width:100%; */
+  display:block;
+}
 .header .logo{
-  margin: 10px;
   margin-bottom: 30px;
-  display: block;
   padding: 10px 15px;
   text-decoration: none;
   text-align: center;
   font-size: 25px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  width:100%;
+  /* width:100%; */
 }
 .header-links{
-  width:50%;
+  /* width:50%; */
   display: block;
 }
 .header a{
-    text-align: center;
-    margin: 10px;
-    margin-bottom: 30px;
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-
+  text-align: center;
+  margin: 10px;
+  margin-bottom: 30px;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .aboutMe{
   padding:20px;
 }
 .aboutMe .self{
-  font-size: 38px;
+ font-size: calc(29px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 .aboutMe .blurb{
   margin-left: 42px;
-  font-size: 14px;
+  font-size: calc(18px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
-
 .projects{
   padding:20px;
 }
 .my-name{
   color:#A43937
 }
+
 .project-container{
   margin:30px 0px;
   text-align: center;
   display:flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  min-height: 310px;
+  /* align-items: center; */
+  transition:.2s;
+  background: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1));
+  padding:10px;
 }
+
 .project-thumbnail{
   width:370px;
   height: 288px;
@@ -102,23 +118,37 @@ i{
 }
 .project-info{
   text-align: center;
-  width:100%;
+  width:450px;
+  display:flex;
+  flex-direction: column;
 }
 .project-info h2{
   margin-top: 0px;
   margin-bottom:23px;
 }
+.project-info i{
+  font-size: 1.3em;
+}
+
 .project-tagline{
   font-size: 21px;
+  color:#A43937;
 }
 .project-breif{
-  font-size: 36px;
+  font-size: calc(19px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
   /* text-align: left; */
 }
 .project-links{
   font-size: 21px;
   font-weight: 600;
+  display:block;
+  width:100%;
+  align-items: center;
 }
+.project-links > *{
+  margin-right: 20px;
+}
+
 .contact{
   padding: 20px;
   text-align: center;
@@ -134,12 +164,38 @@ i{
   margin-bottom:100px;
   display: flex;
   justify-content: space-around;
-  font-size: 20px;
+  flex-wrap: nowrap;
+
 }
 
+.contact-links i{
+  color:#A43937;
+  margin-right:6px;
+}
+.contact-links *{
+  font-size: calc(23px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
 
+@media only screen and (max-width:522px){
+  .header{
+    justify-content: center;
+  }
+  .contact-links *{
+    font-size: calc(19px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  }
 
-/* @media only screen and (min-width: 810px){
+}
+@media only screen and (max-width:745px){
+  .contact-links{
+    flex-wrap: wrap;
+  }
+  .contact-links a{
+    display:block;
+    width:100%;
+    margin:10px 0px;
+  }
+}
+@media only screen and (min-width: 810px){
   .header-links{
     text-align: right;
   }
@@ -148,23 +204,21 @@ i{
     padding-left: 15px;
   }
 
-} */
+}
 
-@media only screen and (min-width: 1078px){
+@media only screen and (min-width: 979px){
   .header .logo{
     width:30%;
   }
+}
+
+@media only screen and (min-width: 1078px){
   .project-thumbnail{
     margin-bottom: 0px;
   }
   .project-thumbnail{
     width:400px;
+
     margin-bottom:15px;
-  }
-  .project-info{
-    width:400px;
-  }
-  .aboutMe .blurb{
-    color:red;
   }
 }
